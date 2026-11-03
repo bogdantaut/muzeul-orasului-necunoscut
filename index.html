@@ -66,6 +66,9 @@ html{scroll-behavior:smooth}
 .addr-sep{display:none}
 .addr-part{display:block}
 }
+.play-btn:hover{background:#000}
+.play-btn:focus-visible{outline:3px solid #ffde4f;outline-offset:3px}
+#film-box[hidden]{display:none!important}
 @media (prefers-reduced-motion:reduce){.room{transition:none}.room:hover{transform:none}}
 </style>
 </head>
@@ -107,6 +110,7 @@ html{scroll-behavior:smooth}
 </div>
 <figure style="position: relative; margin: 0; aspect-ratio: 1058 / 909; max-width: 100%; overflow: hidden">
 <img src="assets/img/hero-gara.jpg" alt="Peronul gării din Mizil, fotografie de epocă, cu tăblița MIZIL deasupra călătorilor" style="display: block; width: 100%; height: 100%; object-fit: cover">
+<video id="hero-loop" src="assets/video/mon-hero-loop.mp4" muted loop playsinline preload="auto" aria-hidden="true" tabindex="-1" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.4s ease"></video>
 
 <div aria-hidden="true" style="position: absolute; left: 74%; top: 0; width: 26%; height: 27%; background: #ffde4f"></div>
 <div aria-hidden="true" style="position: absolute; left: 60%; top: 31%; width: 10%; height: 12%; background: #ffde4f"></div>
@@ -114,6 +118,8 @@ html{scroll-behavior:smooth}
 <div aria-hidden="true" style="position: absolute; left: 0; top: 79%; width: 9%; height: 21%; background: #ffde4f"></div>
 <div aria-hidden="true" style="position: absolute; left: 86%; top: 87%; width: 14%; height: 13%; background: #ffde4f"></div>
 
+<button id="play-film" class="play-btn ral" type="button" aria-haspopup="dialog" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); display: flex; align-items: center; gap: 14px; height: 64px; padding: 0 26px 0 20px; border: 0; background: #231f20; color: #ffde4f; font-weight: 800; font-size: 17px; cursor: pointer; white-space: nowrap">
+<svg width="24" height="26" viewBox="0 0 24 26" aria-hidden="true"><path d="M2 1L23 13L2 25Z" fill="#ffde4f"></path></svg>Vezi filmul</button>
 </figure>
 </div>
 <div class="wrap">
@@ -315,6 +321,37 @@ html{scroll-behavior:smooth}
 </footer>
 
 </div>
+<div id="film-box" role="dialog" aria-modal="true" aria-label="Filmul Muzeului Orașului Necunoscut" hidden style="position: fixed; inset: 0; z-index: 50; background: rgba(35,31,32,0.95); display: flex; align-items: center; justify-content: center; padding: 72px 16px 32px">
+<button id="film-close" type="button" aria-label="Închide filmul" style="position: absolute; top: 16px; right: 16px; width: 52px; height: 52px; border: 0; padding: 0; background: #ffde4f; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><g stroke="#231f20" stroke-width="3.5"><path d="M2 2L20 20"></path><path d="M20 2L2 20"></path></g></svg></button>
+<video id="film" controls playsinline preload="none" poster="assets/video/mon-film-poster.jpg" style="display: block; width: min(100%, 1280px); max-height: 100%; aspect-ratio: 16 / 9; background: #000"><source src="assets/video/mon-film.mp4" type="video/mp4"></video>
+</div>
+<script>
+(function(){
+  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var loop = document.getElementById('hero-loop');
+  var box = document.getElementById('film-box'), film = document.getElementById('film');
+  var openBtn = document.getElementById('play-film'), closeBtn = document.getElementById('film-close');
+  function quiet(p){ if (p && p.catch) p.catch(function(){}); }
+  if (loop && !reduced) {
+    quiet(loop.play());
+    setTimeout(function(){ loop.style.opacity = '1'; }, 3000);
+  } else if (loop) { loop.removeAttribute('src'); loop.load(); }
+  function openFilm(){
+    if (loop && !reduced) loop.pause();
+    box.hidden = false; document.body.style.overflow = 'hidden';
+    quiet(film.play()); closeBtn.focus();
+  }
+  function closeFilm(){
+    film.pause(); box.hidden = true; document.body.style.overflow = '';
+    if (loop && !reduced) quiet(loop.play());
+    openBtn.focus();
+  }
+  openBtn.addEventListener('click', openFilm);
+  closeBtn.addEventListener('click', closeFilm);
+  box.addEventListener('click', function(e){ if (e.target === box) closeFilm(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && !box.hidden) closeFilm(); });
+})();
+</script>
 <script>
 (function(){
   var b=document.querySelector('.burger'),n=document.getElementById('meniu-mobil');

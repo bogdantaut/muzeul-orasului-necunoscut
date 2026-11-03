@@ -66,8 +66,8 @@ html{scroll-behavior:smooth}
 .addr-sep{display:none}
 .addr-part{display:block}
 }
-.play-btn:hover{background:#000}
-.play-btn:focus-visible{outline:3px solid #ffde4f;outline-offset:3px}
+.play-btn:hover{background:#f3edd9}
+.play-btn:focus-visible{outline:3px solid #231f20;outline-offset:3px}
 #film-box[hidden]{display:none!important}
 @media (prefers-reduced-motion:reduce){.room{transition:none}.room:hover{transform:none}}
 </style>
@@ -118,8 +118,7 @@ html{scroll-behavior:smooth}
 <div aria-hidden="true" style="position: absolute; left: 0; top: 79%; width: 9%; height: 21%; background: #ffde4f"></div>
 <div aria-hidden="true" style="position: absolute; left: 86%; top: 87%; width: 14%; height: 13%; background: #ffde4f"></div>
 
-<button id="play-film" class="play-btn ral" type="button" aria-haspopup="dialog" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); display: flex; align-items: center; gap: 14px; height: 64px; padding: 0 26px 0 20px; border: 0; background: #231f20; color: #ffde4f; font-weight: 800; font-size: 17px; cursor: pointer; white-space: nowrap">
-<svg width="24" height="26" viewBox="0 0 24 26" aria-hidden="true"><path d="M2 1L23 13L2 25Z" fill="#ffde4f"></path></svg>Vezi filmul</button>
+<button id="play-film" class="play-btn" aria-label="Vezi filmul" type="button" aria-haspopup="dialog" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: clamp(52px,10.5%,72px); aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center; padding: 0; border: 0; background: #ffde4f; cursor: pointer"><svg width="38%" viewBox="0 0 24 26" aria-hidden="true" style="display: block; margin-left: 6%"><path d="M2 1L23 13L2 25Z" fill="#231f20"></path></svg></button>
 </figure>
 </div>
 <div class="wrap">

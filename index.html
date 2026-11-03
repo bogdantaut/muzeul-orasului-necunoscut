@@ -37,6 +37,10 @@ a{color:#231f20}a:hover{color:#67472b}
 .foot{display:grid;grid-template-columns:1.3fr 1fr 1.6fr 1fr;gap:40px}
 .nav{display:flex;flex-wrap:wrap;align-items:center;gap:8px 28px}
 .btn{display:inline-flex;align-items:center;gap:12px;min-height:48px;padding:0 24px;text-decoration:none;font-family:Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:800;font-size:17px}
+/* Brațul MON: unghiul diagonalei din brand-book = 74,43° (run/drop = 0,27865); grosimea diagonalei = grosimea barelor (decalaj orizontal 0,7594 × t) */
+.brat{--t:32px;--d:150px;height:calc(var(--d) + var(--t))}
+.brat-shape{clip-path:polygon(0 0,66.667% 0,calc(66.667% + var(--d) * 0.27865) var(--d),91.667% var(--d),91.667% calc(var(--d) + var(--t)),calc(66.667% + var(--d) * 0.27865 - var(--t) * 0.7594) calc(var(--d) + var(--t)),calc(66.667% - var(--t) * 0.7594) var(--t),0 var(--t))}
+.brat-addr{top:var(--t);height:calc(var(--d) - var(--t));right:calc(33.333% + 24px)}
 .burger,.nav-mobile{display:none}
 html{scroll-behavior:smooth}
 .nav-mobile[hidden]{display:none!important}
@@ -58,10 +62,9 @@ html{scroll-behavior:smooth}
 .c3,.c2{grid-column:span 1}
 .foot{grid-template-columns:1fr}
 .sticker{display:none}
-.brat{height:176px !important}
+.brat{--t:24px;--d:132px}
 .addr-sep{display:none}
 .addr-part{display:block}
-.hero-addr{max-width:62%}
 }
 @media (prefers-reduced-motion:reduce){.room{transition:none}.room:hover{transform:none}}
 </style>
@@ -110,10 +113,12 @@ html{scroll-behavior:smooth}
 
 </figure>
 </div>
-<div class="brat" style="position: relative; height: clamp(120px,14vw,200px)">
-<svg viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block"><polygon points="0,0 1000,0 1150,150 1440,150 1440,192 1132,192 982,42 0,42" fill="#f1716c"></polygon></svg>
-<div class="wrap" style="position: absolute; left: 0; right: 0; top: 34%">
+<div class="wrap">
+<div class="brat" style="position: relative">
+<div class="brat-shape" aria-hidden="true" style="position: absolute; inset: 0; background: #f1716c"></div>
+<div class="brat-addr" style="position: absolute; left: 0; display: flex; align-items: center">
 <p class="hero-addr" style="margin: 0; font-size: clamp(15px,1.3vw,19px); line-height: 1.4; font-weight: 700"><span class="addr-part">Mizil</span><span class="addr-sep"> | </span><span class="addr-part">Casa Condeescu</span><span class="addr-sep"> | </span><span class="addr-part">Mihai Bravu, nr. 85</span></p>
+</div>
 </div>
 </div>
 </section>

@@ -302,7 +302,12 @@ html{scroll-behavior:smooth}
 
 </div>
 <script>
-try{ if ('scrollRestoration' in history) history.scrollRestoration='manual'; if (!location.hash) window.scrollTo(0,0); }catch(e){}
+(function(){
+  // Deschide pagina de sus. scrollIntoView urca si in ferestrele-parinte (previzualizari, iframe-uri).
+  function toTop(){ try{ if (location.hash) return; window.scrollTo(0,0); var h=document.querySelector('header'); if (h && h.scrollIntoView) h.scrollIntoView({block:'start'}); }catch(e){} }
+  try{ if ('scrollRestoration' in history) history.scrollRestoration='manual'; }catch(e){}
+  toTop(); window.addEventListener('load', toTop); setTimeout(toTop, 150);
+})();
 </script>
 <script>
 (function(){

@@ -65,6 +65,13 @@ a{color:#231f20}a:hover{color:#67472b}
 .brat{--t:32px;--d:150px;height:calc(var(--d) + var(--t))}
 .brat-shape{clip-path:polygon(0 0,66.667% 0,calc(66.667% + var(--d) * 0.27865) var(--d),91.667% var(--d),91.667% calc(var(--d) + var(--t)),calc(66.667% + var(--d) * 0.27865 - var(--t) * 0.7594) calc(var(--d) + var(--t)),calc(66.667% - var(--t) * 0.7594) var(--t),0 var(--t))}
 .brat-addr{top:var(--t);height:calc(var(--d) - var(--t));right:calc(33.333% + 24px)}
+
+/* Banda de logo-uri din footer: fundal crem, ca logo-urile (negre / colorate) sa ramana lizibile */
+.logos{display:flex;flex-wrap:wrap;gap:28px 56px;align-items:flex-start}
+.logo-group{display:flex;flex-direction:column;gap:14px;min-width:0}
+.logo-row{display:flex;flex-wrap:wrap;align-items:center;gap:20px 32px}
+.logo-row img{display:block;width:auto;max-width:100%}
+@media (max-width:560px){.logos{gap:28px}.logo-row{gap:16px 24px}}
 .burger,.nav-mobile{display:none}
 html{scroll-behavior:smooth}
 .nav-mobile[hidden]{display:none!important}
@@ -302,6 +309,26 @@ html{scroll-behavior:smooth}
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 32px; font-size: 13px; line-height: 1.5">
 <p style="margin: 0">Un proiect realizat împreună cu Primăria Mizil.</p>
 <p style="margin: 0">Echipa curatorială: Cosmin Manolache, Cosmin Pavel, Lila Passima</p>
+</div>
+</div>
+<div style="background: #f3edd9; color: #231f20">
+<div class="wrap logos" style="padding-top: 36px; padding-bottom: 36px">
+<div class="logo-group">
+<p class="ral" style="margin: 0; font-weight: 800; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #67472b">Proiect co-finanțat de</p>
+<div class="logo-row"><img loading="lazy" src="assets/img/logo-afcn.png" alt="Administrația Fondului Cultural Național (AFCN)" style="height: 84px"></div>
+</div>
+<div class="logo-group">
+<p class="ral" style="margin: 0; font-weight: 800; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #67472b">Organizator</p>
+<div class="logo-row"><img loading="lazy" src="assets/img/logo-primaria-mizil.png" alt="Primăria Mizil" style="height: 84px"></div>
+</div>
+<div class="logo-group">
+<p class="ral" style="margin: 0; font-weight: 800; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #67472b">Parteneri</p>
+<div class="logo-row">
+<img loading="lazy" src="assets/img/logo-scoala-de-la-piscu.png" alt="Școala de la Piscu, muzeu-atelier" style="height: 78px">
+<img loading="lazy" src="assets/img/logo-muzeul-hartilor.png" alt="Muzeul Hărților" style="height: 66px">
+<img loading="lazy" src="assets/img/logo-mtr.png" alt="Muzeul Țăranului Român" style="height: 84px">
+</div>
+</div>
 </div>
 </div>
 </footer>

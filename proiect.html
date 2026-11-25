@@ -76,7 +76,7 @@ a{color:#231f20}a:hover{color:#67472b}
 .logo-row img{display:block;width:auto;max-width:100%}
 @media (max-width:560px){.logos{gap:28px}.logo-row{gap:16px 24px}}
 
-/* Pagina Proiect: hero roz, brat maro; echipa pe trei laboratoare */
+/* Pagina Proiect: header + hero roz, brat galben; echipa pe trei laboratoare */
 .pr-intro{display:grid;grid-template-columns:7fr 4fr;gap:clamp(32px,5vw,80px);align-items:start}
 .labs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
 .lab{display:flex;flex-direction:column;gap:22px;background:#fff8e6;padding:clamp(24px,2.6vw,36px);border-top:8px solid var(--c);min-width:0}
@@ -84,7 +84,7 @@ a{color:#231f20}a:hover{color:#67472b}
 .credit dt{font-family:Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#67472b}
 .credit dd{margin:0;font-size:16px;line-height:1.5}
 .credit dd b{font-family:Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:800;font-size:18px}
-.brat-dark .brat-shape{background:#67472b !important}
+.brat-dark .brat-shape{background:#ffde4f !important}
 @media (max-width:1000px){.pr-intro,.labs{grid-template-columns:1fr}}
 .burger,.nav-mobile{display:none}
 html{scroll-behavior:smooth}
@@ -135,7 +135,7 @@ a.ct-big:focus-visible{outline:3px solid #231f20;outline-offset:4px}
 <div style="background: #f3edd9; color: #231f20; min-width: 0">
 
 <!-- HEADER -->
-<header style="background: #ffde4f; position: relative">
+<header style="background: #f1716c; position: relative">
 <div class="wrap" style="display: flex; align-items: center; justify-content: space-between; gap: 16px 32px; padding-top: 20px; padding-bottom: 20px">
 <a href="index.html" aria-label="Muzeul Orașului Necunoscut, acasă" style="display: block; line-height: 0">
 <img src="assets/img/logo-231f20.svg" alt="Muzeul Orașului Necunoscut" style="height: 72px; width: auto">
@@ -152,7 +152,7 @@ a.ct-big:focus-visible{outline:3px solid #231f20;outline-offset:4px}
 <span class="ico-close" hidden><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><g stroke="#ffde4f" stroke-width="3.5"><path d="M2 2L20 20"></path><path d="M20 2L2 20"></path></g></svg></span>
 </button>
 </div>
-<nav id="meniu-mobil" hidden class="nav-mobile ral" aria-label="Meniu" style="background: #ffde4f; border-top: 6px solid #231f20; padding: 8px max(16px,4.4vw) 28px; flex-direction: column; gap: 4px">
+<nav id="meniu-mobil" hidden class="nav-mobile ral" aria-label="Meniu" style="background: #f1716c; border-top: 6px solid #231f20; padding: 8px max(16px,4.4vw) 28px; flex-direction: column; gap: 4px">
 <a href="muzeul.html" style="text-decoration: none; font-weight: 800; font-size: 30px; line-height: 1.2; padding: 10px 0; border-bottom: 2px solid #231f20">Muzeul</a>
 <a href="index.html#arhiva" style="text-decoration: none; font-weight: 800; font-size: 30px; line-height: 1.2; padding: 10px 0; border-bottom: 2px solid #231f20">Arhiva</a>
 <a href="proiect.html" aria-current="page" style="text-decoration: none; font-weight: 800; font-size: 30px; line-height: 1.2; padding: 10px 0; border-bottom: 2px solid #231f20">Proiect</a>
@@ -190,7 +190,7 @@ a.ct-big:focus-visible{outline:3px solid #231f20;outline-offset:4px}
 <aside style="background: #231f20; color: #f3edd9; padding: clamp(24px,3vw,36px); display: flex; flex-direction: column; gap: 18px; min-width: 0">
 <p class="ral" style="margin: 0; font-weight: 800; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #ffde4f">Prezentarea proiectului</p>
 <p class="ral" style="margin: 0; font-weight: 700; font-size: 22px; line-height: 1.3">Conceptul, sălile și echipa, într-un singur document.</p>
-<a class="btn" href="assets/docs/prezentare-muzeul-orasului-necunoscut.pdf" target="_blank" rel="noopener" style="background: #ffde4f; color: #231f20; align-self: flex-start">Descarcă prezentarea PDF <svg width="18" height="20" viewBox="0 0 18 20" aria-hidden="true"><path d="M9 1V14M3 8L9 14L15 8M1 19H17" fill="none" stroke="#231f20" stroke-width="2.5"></path></svg></a>
+<a class="btn" href="assets/docs/prezentare-muzeul-orasului-necunoscut.pdf" target="_blank" rel="noopener noreferrer" style="background: #ffde4f; color: #231f20; align-self: flex-start">Descarcă prezentarea PDF <svg width="18" height="20" viewBox="0 0 18 20" aria-hidden="true"><path d="M9 1V14M3 8L9 14L15 8M1 19H17" fill="none" stroke="#231f20" stroke-width="2.5"></path></svg></a>
 </aside>
 </div>
 </section>
@@ -228,6 +228,7 @@ a.ct-big:focus-visible{outline:3px solid #231f20;outline-offset:4px}
 <div class="credit"><dt>Spot de promovare a proiectului în săli de cinema și rețele sociale</dt><dd><b>Soul Remesher</b><br>Ovidiu Antonio Matei</dd></div>
 <div class="credit"><dt>Distribuție spot de promovare în săli de cinema</dt><dd><b>New Age Media</b></dd></div>
 <div class="credit"><dt>Distribuție plicuri de promovare în stații CFR</dt><dd><b>CFR Călători</b></dd></div>
+<div class="credit"><dt>Online</dt><dd><b>Youngminds</b></dd></div>
 </dl>
 </section>
 </div>
